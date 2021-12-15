@@ -3,6 +3,7 @@ package dkit.oop;
 import javax.swing.*;
 import java.util.ArrayList;
 import java.util.List;
+import java.util.Scanner;
 
 /**
  * AirplaneManager is a container class that stores Airplanes
@@ -14,7 +15,7 @@ import java.util.List;
  */
 
 public class AirplaneManager {
-
+    public static Scanner input = App.scanner;
     ArrayList<Airplane> airplaneList;
 
     public AirplaneManager() {
@@ -24,28 +25,48 @@ public class AirplaneManager {
     //Q3.
 
     // write add() method
-
+public void add(Airplane airplane){
+    System.out.println("Airplane Type: ");
+     String type = input.nextLine();
+    System.out.println("Airplane Max Load(KG): ");
+    int MAX_LOAD_KG = input.nextInt();
+    Airplane plane = new Airplane(type,MAX_LOAD_KG);
+    airplaneList.add(plane);
+}
 
     public void displayAllAirplanes() {
-        // add code
+        for (Airplane airplane: airplaneList){
+            System.out.println(airplane);
+        }
     }
 
-    public void displayAllPassengerAirplanes() {
-        // add code
+    public void displayAllPassengerAirplanes(String type) {
+        if (type.equals("passengerPlane")){
+            ArrayList<Airplane> airplaneList = sort(type);
+            for(Airplane airplane : new Airplane){
+                System.out.println(airplane);
+            }
+        }
     }
+    public void getAllCargoAirplanes(String type) {
+        if (type.equals("cargoPlane")){
+            ArrayList<Airplane> airplaneList = sort(type);
+            for(Airplane airplane : airplane){
+                System.out.println(airplane);
+            }
+        }
+    }
+//    public void addPassengerNameToAirplane( airplaneId, passengerName){
+//
+//    }
 
-    //  write method getAllCargoAirplanes()
+//    public void findAirplaneByPassengerName (String passengerName){
+//
+//    }
 
+     public void displayAllAirplanesInOrderOfType( ){
 
-    // write  addPassengerNameToAirplane( airplaneId, passengerName)
-
-
-    // write containsAirplane( Airplane plane )
-
-
-    // write findAirplaneByPassengerName( passengerName )
-
-    // write displayAllAirplanesInOrderOfType( argument )
+     }
 
 
 } // end of AirplaneManager

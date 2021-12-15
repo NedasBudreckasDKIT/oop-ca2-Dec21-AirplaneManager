@@ -2,20 +2,31 @@ package dkit.oop;
 
 import java.util.ArrayList;
 import java.util.List;
+import java.util.Scanner;
 
-public class PassengerAirplane  {
-
+public class PassengerAirplane extends Airplane {
+    public static Scanner input = App.scanner;
     // fields(Q2)
+    int MAX_NUM_PASSENGERS;
+    String passenger;
+    public static ArrayList passengers;
+
+
 
     PassengerAirplane(String type, int maxNumPassengers) {
-        // code here
+        super(type);
+
 
     }
 
     public void addPassenger(String name) {
-        // code here
+        System.out.println("Enter name: ");
+        name = input.nextLine();
 
     }
-
+    @Override
+    public String toString() {
+        return ""
+    }
 
 } // end of PassengerAirplane
